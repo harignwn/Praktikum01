@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+ 
+/*bagian header*/
+.wrap .header{
+    background-color: darkslategray;
+    width: 100%;
+	/*height: 50px;*/
+	padding: 20px 10px;
+}
+ 
+/*akhir header*/
+ 
+/*bagian menu*/
+
+ 
+.wrap .menufoot ul{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+ 
+.wrap .menufoot ul li{
+	float: left;
+	list-style-type: none;
+	padding: 10px;
+}
+
+.wrap .menu ul{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+ 
+.wrap .menu ul li{
+	float: left;
+	list-style-type: none;
+	padding: 10px;
+}
+/*akhir menu*/
+ 
+.clear{
+	clear: both;
+}
+ 
+.badan{
+	height: 450px;
+}
+/*bagian sidebar*/
+.wrap .badan .sidebar{
+    margin-top: 4%;
+	background: rgb(139, 131, 116);
+	float: right;	
+	width: 25%;
+	height: 60%;
+}
+ 
+/*akhir sidebar*/
+ 
+.wrap .badan .content{
+	float: left;
+	height: 100%;
+	width: 75%;	
+}
+ 
+.wrap .footer{
+    background-color: darkslategray;
+	width: 100%;
+    margin-top: 40px;
+	padding: 20px 10px;
+}
+</style>    
+</head>
+<body style="margin-top: -23px;margin-left: -10px; background-color: rgb(241, 249, 241);">
+  <h1 style="color:beige"></H1>
+	<div class="wrap">
+		<div class="header">			
+                <div class="menu">
+                    <ul>
+                        <li>
+                            MySites 
+                                    </li>
+                                    <li><a href="#">Categori X</a></li>
+                                    <li><a href="#">Categori Y</a></li>
+                                    <li><a href="#">Categori Z</a></li>
+                            <form action=" formulir.html" method="get"  align ="right" style="margin-top: 10px;">
+                                <input type="text" name="Email" id="Email" placeholder="Seach" size="24"/>
+                                <button type="submit"  style="margin-top: -5px; background-color: rgb(13, 90, 79); color: white;">   <i class="	fa fa-shopping-cart" style="font-size:16px"></i></button>
+                                </form>
+                    </ul>
+                </div>
+            </div>
+
+		<div class="badan">			
+			<div class="sidebar" >
+                <p style="font-size: 20px; padding-left: 10px;" >
+                    Summary (2 Item)
+                </p>
+                <div class="tablesummary" style="padding-left: 8px;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Subtotal
+                                </td>
+                                <td style="width: 40%;"></td>
+            
+                                <td>
+                                    $40.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Shipping 
+                                </td>
+                                <td style="width: 40%;"></td>
+            
+                                <td>
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Subtotal 
+                                </td>
+                                <td style="width: 40%;"></td>
+                                <td>
+                                    -
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                      </table>
+                      <hr>
+                  <p style="text-align: left;">Total </p>
+                  <div align = "center">
+                    <button type="submit"  style="margin-top: -5px; background-color: rgb(14, 100, 34); color: white;">CheckOut</button>
+    
+                  </div>
+                </div>
+               
+			</div>
+			<div class="content">
+                <div>
+                    <p style="font-size: 25px;" align="center">
+                        <b>
+                            Your Cart
+                        </b>
+                    </p>
+                </div>
+                            <table border="0" style="margin-top: 4%;" align="center" cellpadding ="3" cellspacing="5" >
+                                <thead>
+                                  <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Item</th>
+                                    <th>Item name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                  </tr>
+                                </thead>
+                                <tbody style="text-align: center;">
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td >
+                                      <p>
+                                        <img src="shirt2.jfif" width="40%" class="img-fluid" alt="">
+                                      
+                                      </p>
+                                    </td>
+                                    <td style="width: 130px;">
+                                        T-shirt<br>
+                                        Size : Small
+                                    </td>
+                                    <td>
+                                      <p >
+                                        $20.00
+                                      </p>
+                                    </td>
+                                    <td>
+                                      <p>
+                                        <input id="qty" type="number" value="0"/>
+                                      </p>
+                                </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td width="200">
+                                      <p>
+                                        <img src="tshirt 1.jfif" width="40%" class="img-fluid" alt="">
+                                       
+                                      </p>
+                                    </td>
+                                    <td>
+                                        T-shirt<br>
+                                        Size : Small
+                                    </td>
+                                    <td style="width: 130px;">
+                                      <p>
+                                        $20.00
+                                      </p>  
+                                    </td>
+                                    <td>
+                                      <p>
+                                        <input id="qty" type="number" value="0"/>
+                                      </p>
+                                </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                             
+                    <div class="subtot" align ="center" style="margin-left: 70px;">
+                    <hr>
+
+                        <p>Subtotal $40.00</p>
+                    <hr>
+
+                    </div>
+			</div>
+            
+		<div class="clear"></div>
+		<div class="footer">
+            <div class="menufoot">
+                <ul>
+                    <li>
+			MySites 
+
+                    </li>
+                    <li><a href="#">Categori X</a></li>
+                    <li><a href="#">Categori Y</a></li>
+                    <li><a href="#">Categori Z</a></li>
+                    <div align ="right">
+                        <p>
+                            Stay in touch ! Join out Newsletter 
+
+                        </p>
+                    </div>
+                </ul>
+            
+                <ul>
+
+                    <li>   
+                     <i class="fa fa-cc-visa" style="font-size:24px"></i>
+                   </li>
+                    <li><i class="fa fa-cc-mastercard" style="font-size:24px"></i></li>
+                    <li> <i class="fa fa-cc-amex" style="font-size:24px"></i></li>
+                    <div align ="right">
+                        <p>
+                            <form action=" formulir.html" method="get">
+                                <input type="text" name="Email" id="Email" placeholder="Enter Email" size="20"/>
+                                <button type="submit"  style="margin-top: -5px; background-color: rgb(244, 33, 33); color: white;">Subscribe</button>
+                                </form>
+                        </p>
+
+                    </div>
+                </ul>
+            </div>
+		</div>
+	</div>
+</body>
+</html>
