@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+#main{
+    display: flex;
+    flex: 1;
+    /* menempati ruang kosong di container body */
+}
+header, footer{
+    background-color: orange;
+    height: 20vh;
+
+}
+#main > article{
+    flex: 1;
+    order: 1;
+    background-color: aqua;
+}
+#main > nav{
+    flex: 0 0 20vw;
+    background-color: purple;
+    order: 3;
+}
+#main >aside{
+    flex: 0 0 20vw;
+    background-color: blue;
+    order: 2;
+}
+header, footer, article, nav, aside{
+    padding: 1em;
+}

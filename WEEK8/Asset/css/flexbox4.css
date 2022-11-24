@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+#container{
+    display: flex;
+    min-height: 100vh;
+}
+#tengah{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+#tengah > footer, header{
+    height: 20vh;
+}
+#main{
+    display: flex;
+}
+#main > article{
+    min-height: 60vh;
+
+    flex: 1;
+    order: 1    ;
+    background-color: aqua;
+}
+
+#main > aside{
+    flex: 0 0 20vw;
+    background-color: blue;
+    order: 2;
+}
