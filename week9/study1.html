@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Dan Keliling Lingkaran</title>
+</head>
+<body>
+    <span id="pi"></span>
+    <br>
+    <span id="jari"></span>
+    <br>
+    <span id="luas"></span>
+    <br>
+    <span id="keliling"></span>
+    <br>
+    <script>
+        const phi =3.14;
+        console.log(phi);
+        let jari = 14;
+        console.log(jari); 
+        let luas = phi *(jari *jari);
+        console.log(luas);
+
+        let keliling = phi * (2*jari);
+        console.log(keliling);
+
+        //tangkap elementnya tampilkan di browser
+        document.getElementById("pi").innerHTML = phi
+        document.getElementById("jari").innerHTML = jari
+        document.getElementById("luas").innerHTML = luas
+        document.getElementById("keliling").innerHTML = keliling
+    </script>
+</body>
+</html>

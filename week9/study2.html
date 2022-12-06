@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah</title>
+</head>
+<body>
+<input type="number" class="input" placeholder="mmasukan dalam satuan dollar">
+<select class="kurs">
+    <option value="usd">USD - 15.000</option>
+    <option value="euro">EURO - 16.000</option>
+    <option value="sgp">SINGAPORE - 11.000</option>
+</select>
+<!-- usd 15k
+euro 16k
+sgp 11k -->
+<button class="hitung">Hitung</button>
+<h3 class="hasil">Hasil ini adalah </h3>
+    <script>
+    const input = document.querySelector(".input");
+    const kurs = document.querySelector(".kurs");
+    const htgbtn = document.querySelector(".hitung");
+    const hasil = document.querySelector(".hasil");
+    htgbtn.addEventListener("click",function(){
+        if (kurs.value=="usd"){
+            hasil.innerHTML ="hasil : Rp."+ input.value * 15000;
+        }else if (kurs.value == "euro"){
+            hasil.innerHTML ="hasil : Rp."+ input.value * 16000;
+        }else {
+            hasil.innerHTML ="hasil : Rp."+ input.value * 11000;
+        }
+    })
+
+    </script>
+</body>
+</html>

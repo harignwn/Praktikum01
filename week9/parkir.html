@@ -1,0 +1,36 @@
+<!DOCTYPE html">
+<html>
+     <head>
+          <title>Menghitung Biaya Parkir</title>
+          <script type="text/javascript">
+               function hitungLuasKeliling()
+               {
+                    let JamDatang, JamKeluar, totalBayar,totalJamParkir;
+ 
+                    JamDatang = parseInt(document.getElementById("panjang").value);
+                    JamKeluar = parseInt(document.getElementById("lebar").value);
+                    totalJamParkir = JamKeluar - JamDatang;
+                    let jamPertama = 3000;
+                    let jamBerikutnya = 1000;
+
+                    if (totalJamParkir <= 2){
+                        totalBayar = jamPertama;
+                        document.getElementById("keliling").value = totalBayar;
+                    }else if(totalJamParkir > 2){
+                        totalBayar = totalJamParkir * jamBerikutnya + jamPertama-2000;
+                        document.getElementById("keliling").value = totalBayar;
+                    }
+                    // Luas = Panjang * Lebar;
+               }
+          </script>
+     </head>
+     <body align="center">
+          <h1>Menghitung Biaya Parkir</h1>
+          <form>
+               <p>Jam Datang: <input type="text" id="panjang"></p>
+               <p>Jam Keluar: <input type="text" id="lebar"></p>
+               <p><input type="button" value="Hitung" onclick="hitungLuasKeliling();"> </p>
+               <p>Total Bayar Parkir: <input type="text" id="keliling"></p>
+          </form>
+     </body>
+</html>
