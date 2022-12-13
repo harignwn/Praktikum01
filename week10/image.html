@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <select id="pilih" onchange="gambar()">
+            <option value="" hidden>---Pilih---</option>
+            <option value="elang" id="elang">Elang</option>
+            <option value="gorilla" id="gorilla">Gorilla</option>
+            <option value="singa" id="singa">Singa</option>
+        </select>
+        <div class="container_img">
+            <img id="img">
+        </div>
+    </div>
+
+    <script>
+        // simpan hak akses element ke variabel
+        let elang = document.getElementById("elang");
+        let gorilla = document.getElementById("gorilla");
+        let singa = document.getElementById("singa");
+        let pilih = document.getElementById("pilih");
+        let img = document.getElementById("img")
+
+        function gambar() {
+            if (pilih.value == elang.value) {
+                img.setAttribute("src", "img/elang.jpg")
+                alert("ini gambar elang.jpg")
+            } else if (pilih.value == gorilla.value) {
+                img.setAttribute("src", "img/gorila.jpg")
+                alert("ini gambar gorilla.jpg")
+                return false;
+            } else if (pilih.value == singa.value) {
+                img.setAttribute("src", "img/singa.jpg")
+                alert("ini gambar singa.jpg")
+                return false;
+            } else {
+                alert("Salah Pilih Gambar")
+                return false;
+        }
+    }
+
+    </script>
+</body>
+
+</html>

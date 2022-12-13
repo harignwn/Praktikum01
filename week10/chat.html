@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        .container {
+            width: 100%;
+        }
+
+        #box {
+            width: 50%;
+            height: 400px;
+            padding: 0px 5px;
+            border: 1px solid black;
+        }
+
+        #pesan{
+            width:40%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="box"></div>
+        <input type="text" value="" id="pesan" >
+        <input type="button" value="Kirim" onclick="chat()">
+    </div>
+
+    <script>
+        // simpan akses element di variabel
+        let chatBox = document.getElementById("box");
+        let pesan = document.getElementById("pesan");
+
+        // buat fungsi
+        function chat() {
+            // buat element/tag p lalu simpan di variabel tampilan
+            let tampilan = document.createElement("p"); //<p></p>
+            // menambahkan element baru ke id box
+            chatBox.appendChild(tampilan);
+            // isi tag p dengan inputan dari id pesan
+            tampilan.innerHTML = pesan.value;
+        }
+    </script>
+</body>
+
+</html>

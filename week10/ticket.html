@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body >
+    <form id="myForm" name="myForm" action="#or" onsubmit=" return validateForm()" method="post" style="margin: auto;">
+
+        <table border="0" >
+            <tr>
+                <td>
+                    <label for="nama-pelanggan">Nama Pelanggan:</label><br>
+
+                </td>
+                <td>
+                    <input type="text" id="NaCust" name="nama-pelanggan"  ><br>
+                </td>
+                <td>
+                    <label for="" id="ErorPelanggan"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" >
+                </td>
+                <td>
+                    <label for="" id="ErorEmail"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="jam-keberangkatan">Jam Keberangkatan:</label>
+                </td>
+                <td>
+                    <input type="text" id="jamBerangkat" name="jam-keberangkatan" onchange="validateHhMm(this);" >
+                </td>
+                <td>
+                    <label for="" id="ErorJam"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tujuan-keberangkatan">Tujuan Keberangkatan:</label>
+                </td>
+                <td>
+                    <input type="text" id="tujuan" name="tujuan-keberangkatan" >
+                </td>
+                <td>
+                    <label for="" id="ErorTujuan"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="jumlah-tiket">Jumlah Tiket:</label>
+                </td>
+                <td>
+                    <input type="number" id="jumlahTiket" name="jumlah-tiket" min="1" max="10" > 
+                </td>
+                <td>
+                    <label for="" id="ErorTiket"></label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit">
+      </form>
+      <table id="daftar"cellspacing = "2" cellpadding="1" border="1" style="padding: 1px;" style="text-align:center;">
+        <tr >
+            <td>
+               <p>
+                Nama Pelanggan 
+               </p> 
+            </td>
+            <td>
+                <p>
+                 Email 
+                </p> 
+             </td>
+             <td>
+                <p>
+                 Jam Keberangkatan 
+                </p> 
+             </td>
+             <td>
+                <p>
+                 tujuan keberangkatan 
+                </p> 
+             </td>
+             <td>
+                <p>
+                 Jumlah Ticket 
+                </p> 
+             </td>
+          
+        </tr>
+        <tr>
+            <td >
+                <p id="NamaPel">
+
+                </p>
+            </td>
+            <td >
+                <p id="email2">
+
+                </p>
+            </td>
+            <td >
+                <p id="JamBer">
+
+                </p>
+            </td>
+            <td >
+                <p id="TujuanBer">
+
+                </p>
+            </td>
+            <td >
+                <p id="Jumtic">
+
+                </p>
+            </td>
+
+      </table>
+</body>
+<script>
+    // ambil elemen textbox
+let Customer = document.forms['myForm']['NaCust'];
+let email = document.forms['myForm']['email'];
+let jamBerangkat = document.forms['myForm']["jamBerangkat"];
+let tujuan = document.forms['myForm']['tujuan'];
+let jumlahTiket = document.forms['myForm']['jumlahTiket'];
+
+
+let erorCustomer = document.getElementById("ErorPelanggan");
+let eroremail = document.getElementById("ErorEmail");
+let erorjamBerangkat = document.getElementById("ErorJam");
+let erortujuan = document.getElementById("ErorTujuan");
+let erorjumlahTiket = document.getElementById("ErorTiket");
+
+
+let form = document.getElementById("form");
+let namapelanggan = document.getElementById("NamaPel")
+let email2 = document.getElementById("email2");
+let jadwal = document.getElementById("JamBer");
+let TujuanBer = document.getElementById("TujuanBer");
+let tiket = document.getElementById("Jumtic");
+
+let time = jamBerangkat.value;
+let regex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
+let isvalid = regex.match(time);
+// let max = document.getElementById("NaCust").maxLength = 30; 
+// let max = document.getElementById("NaCust").maxLength = 30;
+function validateForm() {
+
+
+  if (Customer.value == "") {
+    erorCustomer.innerHTML = "JANGAN KOSONG";
+    erorCustomer.style.color = "white";
+    erorCustomer.style.background = "red";
+    return false;
+  }
+  if (Customer.value.length > 30){
+    erorCustomer.innerHTML = "MAXIMUM 30 KARAKTER";
+    erorCustomer.style.color = "white";
+    erorCustomer.style.background = "red";
+    return false;
+  }
+
+  if (email.value == "") {
+            eroremail.innerHTML = "JANGAN KOSONG";
+            eroremail.style.color = "white";
+            eroremail.style.background = "red";
+            email.focus();
+                return false;
+            }
+            
+  if (jamBerangkat.value == "") {
+            erorjamBerangkat.innerHTML = "JANGAN KOSONG";
+            erorjamBerangkat.style.color = "white";
+            erorjamBerangkat.style.background = "red";
+                return false;
+            }
+
+            
+  if (tujuan.value == "") {
+            erortujuan.innerHTML = "JANGAN KOSONG";
+            erortujuan.style.color = "white";
+            erortujuan.style.background = "red";
+                return false;
+            }
+if (isNaN(jumlahTiket.value) || jumlahTiket.value < 1 || jumlahTiket.value > 10) {
+    erorjumlahTiket.innerHTML ="MASUKAN JUMLAH 1 SAMPAI 10";
+    erorjumlahTiket.style.color = "white";
+    erorjumlahTiket.style.background = "red";
+    return false;
+  } 
+    
+    namapelanggan.innerHTML = Customer.value;
+    email2.innerHTML = email.value;
+    jadwal.innerHTML = jamBerangkat.value;
+    TujuanBer.innerHTML = tujuan.value;
+    tiket.innerHTML = jumlahTiket.value;
+    return false;
+
+}
+
+// var timeParts = time.split(":");
+//   var hours = parseInt(timeParts[0], 10);
+//   var minutes = parseInt(timeParts[1], 10);
+
+//   // Check if hours and minutes are valid
+//   if (isNaN(hours) || isNaN(minutes)) {
+//     return false;
+//   }
+//   if (hours < 0 || hours > 23) {
+//     return false;
+//   }
+//   if (minutes < 0 || minutes > 59) {
+//     return false;
+//   }
+function validateHhMm(jamBerangkat) {
+    var isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(jamBerangkat.value);
+
+    if (isValid) {
+        jamBerangkat.style.backgroundColor = '#bfa';
+    } else {
+        erorjamBerangkat.innerHTML = "TIDAK VALID MASUKAN INPUT BERUPA JAM 12:21";
+            erorjamBerangkat.style.color = "white";
+            erorjamBerangkat.style.background = "red";
+    }
+
+    return isValid;
+  }
+
+</script>
+</html>
